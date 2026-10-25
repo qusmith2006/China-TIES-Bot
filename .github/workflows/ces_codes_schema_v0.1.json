@@ -1,0 +1,992 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "extraction_ref": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "extraction_schema_version": {
+          "const": "0.2"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "extraction_schema_version"
+      ]
+    },
+    "run_log": {
+      "type": "object",
+      "properties": {
+        "coding_date": {
+          "type": "string"
+        },
+        "model_name": {
+          "type": "string"
+        },
+        "instructions_version": {
+          "type": "string"
+        },
+        "codebook_version": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "coding_date",
+        "model_name",
+        "instructions_version",
+        "codebook_version"
+      ]
+    },
+    "coder_notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "codes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/coding_record"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "extraction_ref",
+    "run_log",
+    "coder_notes",
+    "codes"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "China TIES judgment coding record (v0.1)",
+  "$defs": {
+    "step": {
+      "type": "object",
+      "properties": {
+        "step_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "step_type": {
+          "enum": [
+            "identify_facts",
+            "apply_codebook_definition",
+            "map_facts_to_definition",
+            "address_conflict_or_gap",
+            "rule_out_alternative",
+            "state_assumption",
+            "weigh_considerations",
+            "decide"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[AEMGFTPC][0-9]{2,3}$",
+            "description": "ID of an item in the extraction JSON for this case."
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "step_number",
+        "step_type",
+        "text",
+        "refs"
+      ]
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "measure_id": {
+          "type": "string",
+          "pattern": "^M[0-9]{2,3}$"
+        },
+        "code": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Null when the measure is deliberately left uncoded; explain in reason."
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "measure_id",
+        "code",
+        "reason"
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "properties": {
+        "code": {},
+        "selected": {
+          "type": "boolean"
+        },
+        "argument_for": {
+          "type": "string",
+          "description": "The strongest good-faith case for this code, written as its proponent would make it."
+        },
+        "supporting_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[AEMGFTPC][0-9]{2,3}$",
+            "description": "ID of an item in the extraction JSON for this case."
+          }
+        },
+        "weakest_point": {
+          "type": "string",
+          "description": "The strongest objection to this code."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "selected",
+        "argument_for",
+        "supporting_refs",
+        "weakest_point"
+      ]
+    },
+    "coding_record": {
+      "type": "object",
+      "properties": {
+        "variable": {
+          "enum": [
+            "issue1",
+            "issue2",
+            "econ_issue",
+            "nonecon_issue",
+            "human_rights",
+            "smart_CES",
+            "targetcapitulate",
+            "threatsanct_type",
+            "imposesanct_type",
+            "severity_CES",
+            "anticSender_CES",
+            "anticTarget_CES",
+            "SenderCost_CES",
+            "TargetCost_CES",
+            "finaloutcome",
+            "sendersettlenature",
+            "tgtsettlenature"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[AEMGFTPC][0-9]{2,3}$",
+            "description": "ID of an item in the extraction JSON for this case."
+          }
+        },
+        "codebook_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The codebook categories or rules applied, e.g. 'imposesanct_type 4: Import Restriction'."
+        },
+        "reasoning_steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          },
+          "minItems": 3,
+          "description": "The ordered logic from evidence to decision."
+        },
+        "measure_mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/mapping"
+          },
+          "description": "Required for the two type variables: how each measure was assigned."
+        },
+        "candidate_codes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "description": "Up to three leading candidates, including the selected one. Null code = no code (insufficient evidence)."
+        },
+        "single_candidate_justification": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Required if only one candidate is listed."
+        },
+        "chosen_rationale": {
+          "type": "string",
+          "description": "Why the decision beats the alternatives."
+        },
+        "would_change_if": {
+          "type": "string",
+          "description": "What evidence or ruling would change the code."
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "human_review": {
+          "type": "object",
+          "properties": {
+            "needed": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "needed",
+            "reason"
+          ]
+        },
+        "insufficient_evidence": {
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Written last, after the reasoning above."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "variable",
+        "evidence_refs",
+        "codebook_refs",
+        "reasoning_steps",
+        "measure_mappings",
+        "candidate_codes",
+        "single_candidate_justification",
+        "chosen_rationale",
+        "would_change_if",
+        "confidence",
+        "human_review",
+        "insufficient_evidence",
+        "code"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "issue1"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 16
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "maximum": 16
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "issue2"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 16
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "maximum": 16
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "econ_issue"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "enum": [
+                  0,
+                  1,
+                  null
+                ]
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        0,
+                        1,
+                        null
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "nonecon_issue"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "enum": [
+                  0,
+                  1,
+                  null
+                ]
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        0,
+                        1,
+                        null
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "human_rights"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "enum": [
+                  0,
+                  1,
+                  null
+                ]
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        0,
+                        1,
+                        null
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "smart_CES"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "enum": [
+                  0,
+                  1,
+                  null
+                ]
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        0,
+                        1,
+                        null
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "targetcapitulate"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "enum": [
+                  0,
+                  1,
+                  null
+                ]
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        0,
+                        1,
+                        null
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "threatsanct_type"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 12
+                },
+                "minItems": 1
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "array",
+                        "null"
+                      ],
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 12
+                      },
+                      "minItems": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "imposesanct_type"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 13
+                },
+                "minItems": 1
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "array",
+                        "null"
+                      ],
+                      "items": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 13
+                      },
+                      "minItems": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "severity_CES"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 10
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "maximum": 10
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "anticSender_CES"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 3
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "maximum": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "anticTarget_CES"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 3
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "maximum": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "SenderCost_CES"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 3
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "maximum": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "TargetCost_CES"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 3
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "maximum": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "finaloutcome"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10
+                  },
+                  {
+                    "const": "Other"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 10
+                        },
+                        {
+                          "const": "Other"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "sendersettlenature"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 10
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 10
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "variable": {
+                "const": "tgtsettlenature"
+              }
+            },
+            "required": [
+              "variable"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 10
+              },
+              "candidate_codes": {
+                "items": {
+                  "properties": {
+                    "code": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 10
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "confidence": {
+                "enum": [
+                  "medium",
+                  "low"
+                ]
+              }
+            },
+            "required": [
+              "confidence"
+            ]
+          },
+          "then": {
+            "properties": {
+              "candidate_codes": {
+                "minItems": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

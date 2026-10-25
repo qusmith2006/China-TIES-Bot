@@ -1,0 +1,141 @@
+CODE JUSTIFICATION
+CASE ID: [Insert Case ID Number]
+EPISODE NAME: [Insert Episode Name]
+
+[Insert Date Range] (e.g. 2020/04/28 - 2024/12/04)
+Sender: China (710)
+Target: [Insert Target Country] ([Insert Target Country COW code]) (e.g. Australia (900))
+Issue: [Label (code); add issue2 after a semicolon if present]
+Final Outcome: [Label (code)]
+
+Prepared: [Insert date]
+Model: [Insert model name]
+Codebook: [Insert codebook version] | Extraction schema: [Insert version] | Codes schema: [Insert version]
+
+==============================================================================
+SECTION 1. HOW TO READ THIS DOCUMENT
+==============================================================================
+
+[Keep this section word for word in every document, replacing only CASEID.]
+
+This document explains, in plain language, how each judgment-based code for
+this case was reached. A judgment-based code is one where reasonable
+researchers could disagree, such as how severe an episode was or how it ended.
+Facts such as dates and measures are recorded separately in the case's
+extraction file ([CASEID]_JSON.json).
+
+For each variable the document gives the code, the confidence level, whether a
+person should check it, the facts it rests on, the steps of reasoning, the
+strongest case for each option considered, and why one option was chosen.
+
+Two cautions. First, this justification was written by an AI model. It is a
+written argument that can be checked against the facts it cites. It is not a
+record of how the model computed the code internally, and it is not proof that
+the code is right. Second, codes marked for human review should be confirmed
+by a person before they are used in analysis.
+
+==============================================================================
+SECTION 2. SUMMARY OF CODES
+==============================================================================
+
+[One entry per variable, in codebook order: issue1, issue2, econ_issue,
+nonecon_issue, threatsanct_type, imposesanct_type, human_rights, severity_CES,
+anticSender_CES, anticTarget_CES, SenderCost_CES, TargetCost_CES, smart_CES,
+finaloutcome, sendersettlenature, tgtsettlenature, targetcapitulate.]
+
+[variable name]: [code and its meaning, e.g. 4 (Import Restriction), or
+"No code (insufficient evidence)"]
+   Confidence: [high / medium / low] | Human review: [yes / no]
+
+==============================================================================
+SECTION 3. CODES THAT NEED HUMAN REVIEW
+==============================================================================
+
+[One line per flagged variable, or "None."]
+
+- [variable name]: [reason a person should check it]
+
+==============================================================================
+SECTION 4. JUSTIFICATION BY VARIABLE
+==============================================================================
+
+[Repeat the block below once for every variable, in the same order as
+Section 2. The block for a variable that could not be coded still includes
+every heading, with "No code (insufficient evidence)" as the code.]
+
+[VARIABLE NAME IN CAPITALS] - [the question the variable answers, in plain words]
+------------------------------------------------------------------------------
+CODE: [code and its meaning]
+CONFIDENCE: [high / medium / low]
+HUMAN REVIEW: [Yes. Reason. / No.]
+
+CODEBOOK RULES APPLIED:
+  - [the codebook category or rule used]
+
+FACTS THIS RESTS ON:
+  - [fact in plain words] [extraction ID, e.g. E05]
+
+HOW THE DECISION WAS REACHED:
+  1. [first step of the reasoning] [extraction IDs]
+  2. [next step]
+  [Last step states the decision.]
+
+[Include the next block for imposesanct_type and threatsanct_type only.]
+HOW EACH MEASURE WAS ASSIGNED:
+  - [measure ID] ([measure description]): [code and meaning, or "not coded
+    separately"]. [reason]
+
+THE OPTIONS CONSIDERED:
+  [Up to three options, including the chosen one. If only one option is listed,
+  say why no serious alternative exists.]
+  Option A: [code and meaning] - [SELECTED / not selected]
+      Best argument for it: [the strongest good-faith case for this code,
+      written as its supporter would make it]
+      Its weakest point: [the strongest objection to this code]
+
+  Option B: [code and meaning] - [SELECTED / not selected]
+      Best argument for it: [...]
+      Its weakest point: [...]
+
+WHY THIS DECISION WAS MADE:
+  [Why the chosen code beats the alternatives. This same text appears, in
+  shortened form, in the Coding Rationale section of the narrative.]
+
+WHAT WOULD CHANGE IT:
+  [The evidence or ruling that would change the code]
+
+==============================================================================
+SECTION 5. CONSISTENCY CHECKS
+==============================================================================
+
+[Report PASS, FAIL or "not applicable" for each line. Any FAIL must be
+explained and the codes corrected before the document is delivered.]
+
+Variables coded: [number] of 17
+Each selected option matches its final code: [PASS / FAIL]
+Every cited fact exists in the extraction file: [PASS / FAIL]
+Sanction-type codes equal the per-measure assignments: [PASS / FAIL]
+Low-confidence and no-code decisions are flagged for review: [PASS / FAIL]
+Settlement scores sum to 10: [PASS / FAIL / not applicable]
+Final outcome agrees with imposition status: [PASS / FAIL / not applicable]
+Economic and non-economic issue flags are not both 1: [PASS / FAIL / not applicable]
+
+==============================================================================
+SECTION 6. GAPS AND CONFLICTS IN THE EVIDENCE THAT AFFECT THESE CODES
+==============================================================================
+
+[List each gap or conflict from the extraction file that any code relied on,
+or "None cited."]
+
+- [conflict or gap ID]: [description]
+
+==============================================================================
+SECTION 7. WHERE THIS APPEARS ELSEWHERE
+==============================================================================
+
+The reason each code was chosen also appears, in short form, in the Coding
+Rationale section at the end of the case narrative. The facts cited by ID are
+in the extraction file, and the codes themselves are in the codes file
+([CASEID]_CODES.json).
+
+***Brackets disappear in actual documents***

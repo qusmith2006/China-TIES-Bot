@@ -1,0 +1,1582 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.2"
+    },
+    "run_log": {
+      "type": "object",
+      "properties": {
+        "extraction_date": {
+          "type": "string"
+        },
+        "model_name": {
+          "type": "string"
+        },
+        "instructions_version": {
+          "type": "string"
+        },
+        "codebook_version": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "extraction_date",
+        "model_name",
+        "instructions_version",
+        "codebook_version"
+      ]
+    },
+    "episode": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "description": "Exactly as supplied. Never derived. Expected format: start year + start month (unpadded) + 710 + target COW code (padded to 3 digits). A mismatch must be flagged with a case_id_mismatch item in conflicts_and_gaps."
+        },
+        "episode_name": {
+          "type": "string"
+        },
+        "sender_cow_code": {
+          "const": 710
+        },
+        "target_name": {
+          "$ref": "#/$defs/text_fact"
+        },
+        "target_cow_code": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 990,
+          "description": "Looked up from the COW list in the codebook; a script re-checks it."
+        },
+        "non_state_target_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_date": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/date_fact"
+            }
+          ],
+          "description": "Per codebook: first threat, or first imposition if no warning, or first news report for informal sanctions."
+        },
+        "end_date": {
+          "$ref": "#/$defs/date_fact"
+        },
+        "ongoing_as_of": {
+          "$ref": "#/$defs/date_fact"
+        },
+        "sanction_imposition_start_date": {
+          "$ref": "#/$defs/date_fact"
+        },
+        "threat_made": {
+          "$ref": "#/$defs/flag_fact"
+        },
+        "sanctions_imposed": {
+          "$ref": "#/$defs/flag_fact"
+        },
+        "unsc_involved": {
+          "$ref": "#/$defs/flag_fact"
+        },
+        "international_institution_involved": {
+          "$ref": "#/$defs/flag_fact"
+        },
+        "institution_name": {
+          "$ref": "#/$defs/text_fact"
+        },
+        "institution_id": {
+          "enum": [
+            4400,
+            4580,
+            null
+          ],
+          "description": "4400 UNSC, 4580 WTO, null for any other body or unilateral."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "episode_name",
+        "sender_cow_code",
+        "target_name",
+        "target_cow_code",
+        "non_state_target_note",
+        "start_date",
+        "end_date",
+        "ongoing_as_of",
+        "sanction_imposition_start_date",
+        "threat_made",
+        "sanctions_imposed",
+        "unsc_involved",
+        "international_institution_involved",
+        "institution_name",
+        "institution_id"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      },
+      "minItems": 1
+    },
+    "actors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/actor"
+      }
+    },
+    "measures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/measure"
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "statements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/statement"
+      }
+    },
+    "aims_and_motives": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/aim_or_motive"
+      }
+    },
+    "proceedings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/proceeding"
+      }
+    },
+    "reported_effects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/effect"
+      }
+    },
+    "resolution": {
+      "type": "object",
+      "properties": {
+        "how_ended": {
+          "$ref": "#/$defs/text_fact"
+        },
+        "sender_actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/resolution_action"
+          }
+        },
+        "target_actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/resolution_action"
+          }
+        },
+        "reported_agreement_or_exchange": {
+          "$ref": "#/$defs/text_fact"
+        },
+        "unresolved_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "post_episode_developments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/resolution_action"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "how_ended",
+        "sender_actions",
+        "target_actions",
+        "reported_agreement_or_exchange",
+        "unresolved_issues",
+        "post_episode_developments"
+      ]
+    },
+    "background_context": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/background_item"
+      }
+    },
+    "additional_facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/additional_fact"
+      }
+    },
+    "conflicts_and_gaps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conflict_or_gap"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_log",
+    "episode",
+    "sources",
+    "actors",
+    "measures",
+    "timeline",
+    "statements",
+    "aims_and_motives",
+    "proceedings",
+    "reported_effects",
+    "resolution",
+    "background_context",
+    "additional_facts",
+    "conflicts_and_gaps"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "China TIES episode extraction (v0.2)",
+  "$defs": {
+    "status": {
+      "enum": [
+        "stated",
+        "reported_hedged",
+        "inferred_from_source",
+        "conflicting",
+        "not_reported"
+      ],
+      "description": "stated = source says it plainly; reported_hedged = source says 'reportedly', 'allegedly', unnamed sources; inferred_from_source = not said outright but follows directly from the text (explain in note); conflicting = sources disagree (list candidates); not_reported = sources are silent (value null)."
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^S[0-9]{2,3}$"
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Page, paragraph, footnote or section."
+        },
+        "excerpt": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Short verbatim phrase (about 15 words max) that supports the claim. The locator points to the rest."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "locator",
+        "excerpt"
+      ]
+    },
+    "partial_date": {
+      "type": "object",
+      "properties": {
+        "iso": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?$",
+          "description": "YYYY, YYYY-MM or YYYY-MM-DD. Never pad a partial date. Null when only a relative or vague expression exists."
+        },
+        "precision": {
+          "enum": [
+            "day",
+            "month",
+            "year",
+            "approximate",
+            "relative",
+            "unknown"
+          ]
+        },
+        "as_stated": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The source's own wording when the date is partial, relative or vague (e.g. 'a few days later')."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "iso",
+        "precision",
+        "as_stated"
+      ]
+    },
+    "text_fact": {
+      "type": "object",
+      "description": "A text value with status and evidence.",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          "description": "Only when status is conflicting: every competing value with its own evidence."
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "stated",
+                  "reported_hedged",
+                  "inferred_from_source"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "conflicting"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "candidates"
+            ],
+            "properties": {
+              "candidates": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not_reported"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "date_fact": {
+      "type": "object",
+      "description": "A date with precision, status and evidence.",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/partial_date"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "$ref": "#/$defs/partial_date"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          "description": "Only when status is conflicting: every competing value with its own evidence."
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "stated",
+                  "reported_hedged",
+                  "inferred_from_source"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "conflicting"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "candidates"
+            ],
+            "properties": {
+              "candidates": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not_reported"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "iso": {
+                    "const": null
+                  }
+                },
+                "required": [
+                  "iso"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "flag_fact": {
+      "type": "object",
+      "description": "A 1/0 value with status and evidence.",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "value": {
+          "enum": [
+            0,
+            1,
+            null
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "enum": [
+                  0,
+                  1,
+                  null
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "evidence"
+            ]
+          },
+          "description": "Only when status is conflicting: every competing value with its own evidence."
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "stated",
+                  "reported_hedged",
+                  "inferred_from_source"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "conflicting"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "candidates"
+            ],
+            "properties": {
+              "candidates": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not_reported"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^S[0-9]{2,3}$"
+        },
+        "citation_as_supplied": {
+          "type": "string",
+          "description": "Citation exactly as the research assistant supplied it. Footnotes are built from this."
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "outlet_or_publisher": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publication_date": {
+          "$ref": "#/$defs/partial_date"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_type": {
+          "enum": [
+            "news",
+            "state_media",
+            "government_primary",
+            "international_organization_primary",
+            "academic",
+            "think_tank",
+            "company_or_trade",
+            "other"
+          ]
+        },
+        "perspective": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Origin or vantage point, e.g. 'Australian public broadcaster', 'WTO secretariat'."
+        },
+        "access_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "citation_as_supplied",
+        "authors",
+        "title",
+        "outlet_or_publisher",
+        "publication_date",
+        "url",
+        "source_type",
+        "perspective",
+        "access_note"
+      ]
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "pattern": "^A[0-9]{2,3}$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "actor_type": {
+          "enum": [
+            "state_government",
+            "government_agency",
+            "official_individual",
+            "firm",
+            "industry_group",
+            "international_organization",
+            "media",
+            "other"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role": {
+          "enum": [
+            "sender",
+            "target",
+            "third_party",
+            "mediator",
+            "affected_party",
+            "international_body",
+            "other"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "actor_id",
+        "name",
+        "actor_type",
+        "country",
+        "role",
+        "description",
+        "status",
+        "evidence"
+      ]
+    },
+    "measure": {
+      "type": "object",
+      "properties": {
+        "measure_id": {
+          "type": "string",
+          "pattern": "^M[0-9]{2,3}$"
+        },
+        "stage": {
+          "enum": [
+            "threatened",
+            "imposed"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "The measure as the sources describe it. Source for the threatsanct_measures / imposesanct_measures coding variables."
+        },
+        "formal_status": {
+          "enum": [
+            "formal_official",
+            "informal_reported",
+            "unclear"
+          ]
+        },
+        "mechanism_as_described": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "goods_sectors_or_entities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imposing_actor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^A[0-9]{2,3}$"
+          }
+        },
+        "rate_or_scope": {
+          "type": "object",
+          "properties": {
+            "as_stated": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "rate_percent": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "as_stated",
+            "rate_percent"
+          ]
+        },
+        "announced_date": {
+          "$ref": "#/$defs/date_fact"
+        },
+        "effective_date": {
+          "$ref": "#/$defs/date_fact"
+        },
+        "end_date": {
+          "$ref": "#/$defs/date_fact"
+        },
+        "related_measure_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^M[0-9]{2,3}$"
+          }
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "measure_id",
+        "stage",
+        "description",
+        "formal_status",
+        "mechanism_as_described",
+        "goods_sectors_or_entities",
+        "imposing_actor_ids",
+        "rate_or_scope",
+        "announced_date",
+        "effective_date",
+        "end_date",
+        "related_measure_ids",
+        "status",
+        "note",
+        "evidence"
+      ]
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "pattern": "^E[0-9]{2,3}$"
+        },
+        "phase": {
+          "enum": [
+            "background",
+            "threat",
+            "imposition",
+            "escalation",
+            "target_response",
+            "third_party_response",
+            "negotiation",
+            "de_escalation",
+            "termination",
+            "aftermath"
+          ]
+        },
+        "event_type": {
+          "enum": [
+            "threat",
+            "measure_imposed",
+            "measure_lifted",
+            "statement",
+            "legal_proceeding",
+            "meeting",
+            "diplomatic_move",
+            "market_or_firm_action",
+            "other"
+          ]
+        },
+        "date": {
+          "$ref": "#/$defs/partial_date"
+        },
+        "date_status": {
+          "$ref": "#/$defs/status"
+        },
+        "description": {
+          "type": "string"
+        },
+        "actor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^A[0-9]{2,3}$"
+          }
+        },
+        "measure_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^M[0-9]{2,3}$"
+          }
+        },
+        "proceeding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^P[0-9]{2,3}$"
+          }
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "phase",
+        "event_type",
+        "date",
+        "date_status",
+        "description",
+        "actor_ids",
+        "measure_ids",
+        "proceeding_ids",
+        "status",
+        "note",
+        "evidence"
+      ]
+    },
+    "statement": {
+      "type": "object",
+      "properties": {
+        "statement_id": {
+          "type": "string",
+          "pattern": "^T[0-9]{2,3}$"
+        },
+        "speaker_actor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^A[0-9]{2,3}$"
+        },
+        "speaker_as_stated": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "$ref": "#/$defs/partial_date"
+        },
+        "statement_type": {
+          "enum": [
+            "threat",
+            "demand",
+            "justification",
+            "denial",
+            "warning",
+            "response",
+            "offer",
+            "other"
+          ]
+        },
+        "content": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "content_is_verbatim": {
+          "type": "boolean"
+        },
+        "addressed_to": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attribution": {
+          "enum": [
+            "direct_quote_in_source",
+            "paraphrase_in_source",
+            "reported_secondhand"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "statement_id",
+        "speaker_actor_id",
+        "speaker_as_stated",
+        "date",
+        "statement_type",
+        "content",
+        "content_is_verbatim",
+        "addressed_to",
+        "attribution",
+        "note",
+        "evidence"
+      ]
+    },
+    "aim_or_motive": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^G[0-9]{2,3}$"
+        },
+        "claim": {
+          "type": "string"
+        },
+        "claim_type": {
+          "enum": [
+            "sender_stated_aim",
+            "sender_stated_justification",
+            "target_stated_position",
+            "source_assessment_of_motive",
+            "unnamed_observers_assessment",
+            "other"
+          ]
+        },
+        "attributed_to_actor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^A[0-9]{2,3}$"
+        },
+        "attributed_to_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "claim",
+        "claim_type",
+        "attributed_to_actor_id",
+        "attributed_to_text",
+        "status",
+        "evidence"
+      ]
+    },
+    "proceeding": {
+      "type": "object",
+      "properties": {
+        "proceeding_id": {
+          "type": "string",
+          "pattern": "^P[0-9]{2,3}$"
+        },
+        "forum": {
+          "type": "string"
+        },
+        "reference_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "initiating_actor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^A[0-9]{2,3}$"
+        },
+        "subject_measure_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^M[0-9]{2,3}$"
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "$ref": "#/$defs/partial_date"
+              },
+              "date_status": {
+                "$ref": "#/$defs/status"
+              },
+              "step_type": {
+                "enum": [
+                  "consultations_requested",
+                  "panel_requested",
+                  "panel_established",
+                  "report_circulated",
+                  "appeal",
+                  "complaint_withdrawn_or_suspended",
+                  "settlement_notified",
+                  "other"
+                ]
+              },
+              "description": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "date",
+              "date_status",
+              "step_type",
+              "description",
+              "evidence"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "proceeding_id",
+        "forum",
+        "reference_number",
+        "initiating_actor_id",
+        "subject_measure_ids",
+        "steps"
+      ]
+    },
+    "effect": {
+      "type": "object",
+      "properties": {
+        "effect_id": {
+          "type": "string",
+          "pattern": "^F[0-9]{2,3}$"
+        },
+        "affected_party_text": {
+          "type": "string"
+        },
+        "affected_actor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^A[0-9]{2,3}$"
+          }
+        },
+        "effect_category": {
+          "enum": [
+            "trade_value",
+            "trade_volume",
+            "price_or_market",
+            "firm_or_sector",
+            "domestic_political",
+            "diplomatic",
+            "other"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "as_stated": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "currency": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "period_or_basis": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "as_stated",
+                "value",
+                "unit",
+                "currency",
+                "period_or_basis"
+              ]
+            }
+          ],
+          "description": "Keep figures exactly as stated: currency, unit and time basis as the source gives them. Never convert."
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "effect_id",
+        "affected_party_text",
+        "affected_actor_ids",
+        "effect_category",
+        "description",
+        "quantity",
+        "status",
+        "note",
+        "evidence"
+      ]
+    },
+    "resolution_action": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "date": {
+          "$ref": "#/$defs/partial_date"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "date",
+        "status",
+        "evidence"
+      ]
+    },
+    "background_item": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "period": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "description",
+        "period",
+        "status",
+        "evidence"
+      ]
+    },
+    "additional_fact": {
+      "type": "object",
+      "properties": {
+        "topic_tag": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/partial_date"
+            }
+          ]
+        },
+        "why_no_other_field": {
+          "type": "string",
+          "description": "One line on why this fits nowhere else; recurring tags signal a missing field."
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "topic_tag",
+        "description",
+        "date",
+        "why_no_other_field",
+        "status",
+        "evidence"
+      ]
+    },
+    "conflict_or_gap": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "pattern": "^C[0-9]{2,3}$"
+        },
+        "kind": {
+          "enum": [
+            "source_conflict",
+            "citation_inconsistency",
+            "internal_inconsistency",
+            "single_source_claim",
+            "not_reported",
+            "relative_or_vague_date",
+            "hedged_claim",
+            "definitional_ambiguity",
+            "case_id_mismatch",
+            "other"
+          ]
+        },
+        "location": {
+          "type": "string",
+          "description": "ID or path of the affected item, e.g. 'E07.date' or 'M03'."
+        },
+        "description": {
+          "type": "string"
+        },
+        "competing_values": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "source_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^S[0-9]{2,3}$"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "source_id"
+            ]
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "kind",
+        "location",
+        "description",
+        "competing_values",
+        "evidence"
+      ]
+    }
+  }
+}

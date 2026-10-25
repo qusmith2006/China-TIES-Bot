@@ -1,0 +1,2003 @@
+{
+  "schema_version": "0.2",
+  "run_log": {
+    "extraction_date": "2026-10-17",
+    "model_name": "Claude Sonnet 5.5",
+    "instructions_version": "fixture-none",
+    "codebook_version": "Codebook_cleaned"
+  },
+  "episode": {
+    "case_id": "20204710900",
+    "episode_name": "China-Australia Trade War",
+    "sender_cow_code": 710,
+    "target_name": {
+      "value": "Australia",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Header",
+          "excerpt": "Target: Australia (900)"
+        }
+      ],
+      "note": null
+    },
+    "target_cow_code": 900,
+    "non_state_target_note": null,
+    "start_date": {
+      "value": {
+        "iso": "2020-04-28",
+        "precision": "day",
+        "as_stated": null
+      },
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "On 2020/04/28, China threatened Australia with economic sanctions"
+        }
+      ],
+      "note": null
+    },
+    "end_date": {
+      "value": {
+        "iso": "2024-12-04",
+        "precision": "day",
+        "as_stated": null
+      },
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "dropped all remaining import restrictions stemming from the dispute on 2024/12/04"
+        }
+      ],
+      "note": "Cited article is dated 2024-12-03 (see C07)."
+    },
+    "ongoing_as_of": {
+      "value": {
+        "iso": null,
+        "precision": "unknown",
+        "as_stated": null
+      },
+      "status": "not_reported",
+      "evidence": [],
+      "note": null
+    },
+    "sanction_imposition_start_date": {
+      "value": {
+        "iso": "2020-05-12",
+        "precision": "day",
+        "as_stated": null
+      },
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "China banned imports from Australia’s four largest beef exporters on 2020/05/12"
+        }
+      ],
+      "note": "Summary and narrative differ in scope for this date (see C03)."
+    },
+    "threat_made": {
+      "value": 1,
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "On 2020/04/28, China threatened Australia with economic sanctions"
+        }
+      ],
+      "note": null
+    },
+    "sanctions_imposed": {
+      "value": 1,
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "China banned imports from Australia’s four largest beef exporters on 2020/05/12"
+        }
+      ],
+      "note": null
+    },
+    "unsc_involved": {
+      "value": null,
+      "status": "not_reported",
+      "evidence": [],
+      "note": "Left blank: no supplied source says either way (see C10)."
+    },
+    "international_institution_involved": {
+      "value": null,
+      "status": "not_reported",
+      "evidence": [],
+      "note": "Left blank: the WTO steps were requested by the target; no source reports a sender-side institutional motion (see C10)."
+    },
+    "institution_name": {
+      "value": null,
+      "status": "not_reported",
+      "evidence": [],
+      "note": null
+    },
+    "institution_id": null
+  },
+  "sources": [
+    {
+      "source_id": "S01",
+      "citation_as_supplied": "Example narrative, China-Australia Trade War (case 20204710900). TEST FIXTURE ONLY: stands in for the underlying sources.",
+      "authors": [],
+      "title": "China-Australia Trade War",
+      "outlet_or_publisher": null,
+      "publication_date": {
+        "iso": null,
+        "precision": "unknown",
+        "as_stated": null
+      },
+      "url": null,
+      "source_type": "other",
+      "perspective": "Research-assistant episode narrative",
+      "access_note": "Used only to test schema coverage."
+    },
+    {
+      "source_id": "S02",
+      "citation_as_supplied": "Smyth, Jamie, and Hale, Thomas. “Canberra Probes Reports China Has Banned Australian Coal.” Financial Times, October 13th, 2020.",
+      "authors": [
+        "Smyth, Jamie",
+        "Hale, Thomas"
+      ],
+      "title": "Canberra Probes Reports China Has Banned Australian Coal",
+      "outlet_or_publisher": "Financial Times",
+      "publication_date": {
+        "iso": "2020-10-13",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "www.ft.com/content/b875dc92-2b58-4414-9fb1-d03b3d2b3888",
+      "source_type": "news",
+      "perspective": "Financial press",
+      "access_note": "Cited in footnotes 1 and 14; text not supplied."
+    },
+    {
+      "source_id": "S03",
+      "citation_as_supplied": "Sullivan, Kath. “China's list of sanctions and tariffs on Australian trade is growing. Here's what has been hit so far.” ABC News, December 16th, 2020.",
+      "authors": [
+        "Sullivan, Kath"
+      ],
+      "title": "China's list of sanctions and tariffs on Australian trade is growing",
+      "outlet_or_publisher": "ABC News",
+      "publication_date": {
+        "iso": "2020-12-16",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "www.abc.net.au/news/2020-12-17/australian-trade-tension-sanctions-china-growing-commodities/12984218",
+      "source_type": "news",
+      "perspective": "Australian public broadcaster",
+      "access_note": "Cited in footnotes 2 and 13; text not supplied. URL path reads 2020-12-17."
+    },
+    {
+      "source_id": "S04",
+      "citation_as_supplied": "“China punishes Australia for promoting an inquiry into Covid-19.” The Economist, May 21st, 2020.",
+      "authors": [],
+      "title": "China punishes Australia for promoting an inquiry into Covid-19",
+      "outlet_or_publisher": "The Economist",
+      "publication_date": {
+        "iso": "2020-05-21",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.economist.com/asia/2020/05/21/china-punishes-australia-for-promoting-an-inquiry-into-covid-19",
+      "source_type": "news",
+      "perspective": "British weekly",
+      "access_note": "Cited in footnotes 3, 7, 8; text not supplied."
+    },
+    {
+      "source_id": "S05",
+      "citation_as_supplied": "Sekulich, Harry. “China drops last trade bans imposed on Australia’s exports.” The Daily Aus, December 3rd, 2024.",
+      "authors": [
+        "Sekulich, Harry"
+      ],
+      "title": "China drops last trade bans imposed on Australia’s exports",
+      "outlet_or_publisher": "The Daily Aus",
+      "publication_date": {
+        "iso": "2024-12-03",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://thedailyaus.com.au/economics/china-drops-last-trade-bans-imposed-on-australias-exports",
+      "source_type": "news",
+      "perspective": "Australian news outlet",
+      "access_note": "Cited in footnotes 4, 15, 23; text not supplied."
+    },
+    {
+      "source_id": "S06",
+      "citation_as_supplied": "Cossins-Smith, Annabel. “China Lifts Remaining Restrictions on Australian Coal.” Mining Technology, March 15th, 2023.",
+      "authors": [
+        "Cossins-Smith, Annabel"
+      ],
+      "title": "China Lifts Remaining Restrictions on Australian Coal",
+      "outlet_or_publisher": "Mining Technology",
+      "publication_date": {
+        "iso": "2023-03-15",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "www.mining-technology.com/news/china-lifts-australia-coal-ban/",
+      "source_type": "news",
+      "perspective": "Trade press",
+      "access_note": "Cited in footnotes 5 and 19; text not supplied."
+    },
+    {
+      "source_id": "S07",
+      "citation_as_supplied": "Karp, Paul, and Davidson, Helen. “China Bristles at Australia’s Call for Investigation into Coronavirus Origin.” The Guardian, April 29th, 2020.",
+      "authors": [
+        "Karp, Paul",
+        "Davidson, Helen"
+      ],
+      "title": "China Bristles at Australia’s Call for Investigation into Coronavirus Origin",
+      "outlet_or_publisher": "The Guardian",
+      "publication_date": {
+        "iso": "2020-04-29",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "www.theguardian.com/world/2020/apr/29/australia-defends-plan-to-investigate-china-over-covid-19-outbreak-as-row-deepens",
+      "source_type": "news",
+      "perspective": "British daily",
+      "access_note": "Cited in footnote 6; text not supplied."
+    },
+    {
+      "source_id": "S08",
+      "citation_as_supplied": "Dziedzic, Stephen. “China launches anti-dumping investigation into Australian wine exports.” ABC News, August 17th, 2020.",
+      "authors": [
+        "Dziedzic, Stephen"
+      ],
+      "title": "China launches anti-dumping investigation into Australian wine exports",
+      "outlet_or_publisher": "ABC News",
+      "publication_date": {
+        "iso": "2020-08-17",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.abc.net.au/news/2020-08-18/china-launches-investigation-into-australian-wine-exports/12569640",
+      "source_type": "news",
+      "perspective": "Australian public broadcaster",
+      "access_note": "Cited in footnote 9; text not supplied. Citation date 2020-08-17, URL path 2020-08-18."
+    },
+    {
+      "source_id": "S09",
+      "citation_as_supplied": "Sullivan, Kath, Birtles, Bill, and Terzon, Emilia. “China puts tariffs of up to 200 per cent on Australian wine.” ABC News, August 26th, 2020.",
+      "authors": [
+        "Sullivan, Kath",
+        "Birtles, Bill",
+        "Terzon, Emilia"
+      ],
+      "title": "China puts tariffs of up to 200 per cent on Australian wine",
+      "outlet_or_publisher": "ABC News",
+      "publication_date": {
+        "iso": "2020-08-26",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.abc.net.au/news/2020-11-27/china-puts-tariffs-on-australian-wine-trade-tensions/12886700",
+      "source_type": "news",
+      "perspective": "Australian public broadcaster",
+      "access_note": "Cited in footnote 10; text not supplied. Citation date 2020-08-26, URL path 2020-11-27."
+    },
+    {
+      "source_id": "S10",
+      "citation_as_supplied": "Ma, Jenny, and Li, Jessie. “Chinese state-owned end-users given verbal notice to stop importing Australian coal: sources.” October 9th, 2020.",
+      "authors": [
+        "Ma, Jenny",
+        "Li, Jessie"
+      ],
+      "title": "Chinese state-owned end-users given verbal notice to stop importing Australian coal: sources",
+      "outlet_or_publisher": "S&P Global (outlet inferred from URL)",
+      "publication_date": {
+        "iso": "2020-10-09",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/coal/100920-chinese-state-owned-end-users-given-verbal-notice-to-stop-importing-australian-coal-sources",
+      "source_type": "news",
+      "perspective": "Commodities trade press",
+      "access_note": "Cited in footnote 11; citation as supplied names no outlet."
+    },
+    {
+      "source_id": "S11",
+      "citation_as_supplied": "Sullivan, Kath, Dziedzic, Stephen, and Birtles, Bill. “Fears more trade bans to come as China halts imports of Australian timber, lobsters, barley.” ABC News, November 2nd, 2020.",
+      "authors": [
+        "Sullivan, Kath",
+        "Dziedzic, Stephen",
+        "Birtles, Bill"
+      ],
+      "title": "Fears more trade bans to come as China halts imports of Australian timber, lobsters, barley",
+      "outlet_or_publisher": "ABC News",
+      "publication_date": {
+        "iso": "2020-11-02",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.abc.net.au/news/2020-11-03/china-broadens-trade-war-against-australian-imports/12841142",
+      "source_type": "news",
+      "perspective": "Australian public broadcaster",
+      "access_note": "Cited in footnote 12; text not supplied. Citation date 2020-11-02, URL path 2020-11-03."
+    },
+    {
+      "source_id": "S12",
+      "citation_as_supplied": "“China — Anti Dumping and Countervailing Duty Measures on Barley from Australia.” World Trade Organization, August 11th, 2023.",
+      "authors": [],
+      "title": "China — Anti Dumping and Countervailing Duty Measures on Barley from Australia",
+      "outlet_or_publisher": "World Trade Organization",
+      "publication_date": {
+        "iso": "2023-08-11",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.wto.org/english/tratop_e/dispu_e/cases_e/ds598_e.htm",
+      "source_type": "international_organization_primary",
+      "perspective": "WTO",
+      "access_note": "Cited in footnotes 16 and 20; text not supplied."
+    },
+    {
+      "source_id": "S13",
+      "citation_as_supplied": "“China — Anti-Dumping and Countervailing Duty Measures on Wine from Australia.” World Trade Organization, March 29th, 2024.",
+      "authors": [],
+      "title": "China — Anti-Dumping and Countervailing Duty Measures on Wine from Australia",
+      "outlet_or_publisher": "World Trade Organization",
+      "publication_date": {
+        "iso": "2024-03-29",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.wto.org/english/tratop_e/dispu_e/cases_e/ds602_e.htm",
+      "source_type": "international_organization_primary",
+      "perspective": "WTO",
+      "access_note": "Cited in footnotes 17 and 21; text not supplied."
+    },
+    {
+      "source_id": "S14",
+      "citation_as_supplied": "McGuirk, Rod. “China-Australia Trade Ministers Hold 1st Meeting Since 2019.” AP News, February 6th, 2023.",
+      "authors": [
+        "McGuirk, Rod"
+      ],
+      "title": "China-Australia Trade Ministers Hold 1st Meeting Since 2019",
+      "outlet_or_publisher": "AP News",
+      "publication_date": {
+        "iso": "2023-02-06",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "apnews.com/article/politics-australia-government-china-14e8065a36cfb6815e274a7eafeaca86",
+      "source_type": "news",
+      "perspective": "US wire service",
+      "access_note": "Cited in footnote 18; text not supplied."
+    },
+    {
+      "source_id": "S15",
+      "citation_as_supplied": "Woo, Ryan, Zhang, Albee, and Hall, Casey. “China lifts tariffs on Australian wine, ends three-year freeze in trade.” Reuters, April 2nd, 2024.",
+      "authors": [
+        "Woo, Ryan",
+        "Zhang, Albee",
+        "Hall, Casey"
+      ],
+      "title": "China lifts tariffs on Australian wine, ends three-year freeze in trade",
+      "outlet_or_publisher": "Reuters",
+      "publication_date": {
+        "iso": "2024-04-02",
+        "precision": "day",
+        "as_stated": null
+      },
+      "url": "https://www.reuters.com/markets/commodities/china-lifts-tariffs-australian-wine-ends-three-year-freeze-trade-2024-04-02/",
+      "source_type": "news",
+      "perspective": "International wire service",
+      "access_note": "Cited in footnote 22; text not supplied."
+    }
+  ],
+  "actors": [
+    {
+      "actor_id": "A01",
+      "name": "China",
+      "actor_type": "state_government",
+      "country": "China",
+      "role": "sender",
+      "description": null,
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Header",
+          "excerpt": "Sender: China (710)"
+        }
+      ]
+    },
+    {
+      "actor_id": "A02",
+      "name": "Australia",
+      "actor_type": "state_government",
+      "country": "Australia",
+      "role": "target",
+      "description": null,
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Header",
+          "excerpt": "Target: Australia (900)"
+        }
+      ]
+    },
+    {
+      "actor_id": "A03",
+      "name": "Jingye Cheng",
+      "actor_type": "official_individual",
+      "country": "China",
+      "role": "sender",
+      "description": "China’s ambassador to Australia",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "China’s ambassador to Australia, Jingye Cheng"
+        }
+      ]
+    },
+    {
+      "actor_id": "A04",
+      "name": "General Administration of Customs",
+      "actor_type": "government_agency",
+      "country": "China",
+      "role": "sender",
+      "description": null,
+      "status": "reported_hedged",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "China’s General Administration of Customs reportedly directed"
+        }
+      ]
+    },
+    {
+      "actor_id": "A05",
+      "name": "State-owned utilities and steel mills",
+      "actor_type": "firm",
+      "country": "China",
+      "role": "other",
+      "description": "Reported recipients of the coal directive",
+      "status": "reported_hedged",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "directed state-owned utilities and steel mills to cease importing Australian coal"
+        }
+      ]
+    },
+    {
+      "actor_id": "A06",
+      "name": "Ministry of Commerce",
+      "actor_type": "government_agency",
+      "country": "China",
+      "role": "sender",
+      "description": null,
+      "status": "reported_hedged",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "China’s Ministry of Commerce reportedly imposed unofficial import restrictions"
+        }
+      ]
+    },
+    {
+      "actor_id": "A07",
+      "name": "World Trade Organization",
+      "actor_type": "international_organization",
+      "country": null,
+      "role": "international_body",
+      "description": "Forum for Australia’s consultation requests",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶4",
+          "excerpt": "requested consultations with China via the WTO regarding tariffs on barley"
+        }
+      ]
+    },
+    {
+      "actor_id": "A08",
+      "name": "Australia’s four largest beef exporters",
+      "actor_type": "firm",
+      "country": "Australia",
+      "role": "affected_party",
+      "description": "Named only by this description",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "China banned imports from Australia’s four largest beef exporters"
+        }
+      ]
+    }
+  ],
+  "measures": [
+    {
+      "measure_id": "M01",
+      "stage": "threatened",
+      "description": "Unspecified economic sanctions threatened if Australia kept pushing for an inquiry; ambassador remarked that Chinese people would not want to buy Australian wine and beef",
+      "formal_status": "unclear",
+      "mechanism_as_described": "unspecified; consumer boycott implied by remark",
+      "goods_sectors_or_entities": [
+        "wine",
+        "beef"
+      ],
+      "imposing_actor_ids": [
+        "A01"
+      ],
+      "rate_or_scope": {
+        "as_stated": null,
+        "rate_percent": null
+      },
+      "announced_date": {
+        "value": {
+          "iso": "2020-04-28",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "inferred_from_source",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶1",
+            "excerpt": "On 2020/04/28, China threatened Australia with economic sanctions"
+          }
+        ],
+        "note": "Threat date taken from the narrative's first sentence."
+      },
+      "effective_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "end_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "related_measure_ids": [],
+      "status": "inferred_from_source",
+      "note": "Type of sanction is not specified in the narrative.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "On 2020/04/28, China threatened Australia with economic sanctions"
+        }
+      ]
+    },
+    {
+      "measure_id": "M02",
+      "stage": "imposed",
+      "description": "Ban on imports from Australia’s four largest beef exporters",
+      "formal_status": "unclear",
+      "mechanism_as_described": "import ban",
+      "goods_sectors_or_entities": [
+        "beef"
+      ],
+      "imposing_actor_ids": [
+        "A01"
+      ],
+      "rate_or_scope": {
+        "as_stated": "four largest beef exporters",
+        "rate_percent": null
+      },
+      "announced_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "effective_date": {
+        "value": {
+          "iso": "2020-05-12",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶2",
+            "excerpt": "China banned imports from Australia’s four largest beef exporters on 2020/05/12"
+          }
+        ],
+        "note": null
+      },
+      "end_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "related_measure_ids": [
+        "M05"
+      ],
+      "status": "stated",
+      "note": "No separate end date; may be covered by the 2024/12/04 removal of all remaining restrictions.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "China banned imports from Australia’s four largest beef exporters on 2020/05/12"
+        }
+      ]
+    },
+    {
+      "measure_id": "M03",
+      "stage": "imposed",
+      "description": "80 percent tariff on Australian barley",
+      "formal_status": "unclear",
+      "mechanism_as_described": "tariff",
+      "goods_sectors_or_entities": [
+        "barley"
+      ],
+      "imposing_actor_ids": [
+        "A01"
+      ],
+      "rate_or_scope": {
+        "as_stated": "80 percent tariff",
+        "rate_percent": 80
+      },
+      "announced_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "effective_date": {
+        "value": {
+          "iso": null,
+          "precision": "relative",
+          "as_stated": "a few days later"
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶2",
+            "excerpt": "placed an 80 percent tariff on Australian barley a few days later."
+          }
+        ],
+        "note": "Stated relative to 2020/05/12."
+      },
+      "end_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "related_measure_ids": [
+        "M05"
+      ],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "placed an 80 percent tariff on Australian barley a few days later."
+        }
+      ]
+    },
+    {
+      "measure_id": "M04",
+      "stage": "imposed",
+      "description": "Anti-dumping investigation into wine imports from Australia",
+      "formal_status": "unclear",
+      "mechanism_as_described": "anti-dumping investigation",
+      "goods_sectors_or_entities": [
+        "wine"
+      ],
+      "imposing_actor_ids": [
+        "A01"
+      ],
+      "rate_or_scope": {
+        "as_stated": null,
+        "rate_percent": null
+      },
+      "announced_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "effective_date": {
+        "value": {
+          "iso": "2020-08-17",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶3",
+            "excerpt": "launched an anti-dumping investigation into wine imports from Australia"
+          }
+        ],
+        "note": "Cited article is dated 2020-08-17; its URL path reads 2020-08-18 (see C06)."
+      },
+      "end_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "related_measure_ids": [
+        "M07"
+      ],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "launched an anti-dumping investigation into wine imports from Australia"
+        }
+      ]
+    },
+    {
+      "measure_id": "M05",
+      "stage": "imposed",
+      "description": "Reported verbal directive to state-owned utilities and steel mills to stop importing Australian coal",
+      "formal_status": "informal_reported",
+      "mechanism_as_described": "reported directive; cited title refers to verbal notice",
+      "goods_sectors_or_entities": [
+        "coal"
+      ],
+      "imposing_actor_ids": [
+        "A04"
+      ],
+      "rate_or_scope": {
+        "as_stated": null,
+        "rate_percent": null
+      },
+      "announced_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "effective_date": {
+        "value": {
+          "iso": "2020-10-09",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "reported_hedged",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶3",
+            "excerpt": "reportedly directed state-owned utilities and steel mills"
+          }
+        ],
+        "note": null
+      },
+      "end_date": {
+        "value": {
+          "iso": "2023-03-15",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶5",
+            "excerpt": "China lifted all restrictions on coal imports on 2023/03/15."
+          }
+        ],
+        "note": null
+      },
+      "related_measure_ids": [],
+      "status": "reported_hedged",
+      "note": "Narrative attributes the directive to Customs; the cited S&P title refers to verbal notice to state-owned end-users.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "reportedly directed state-owned utilities and steel mills"
+        }
+      ]
+    },
+    {
+      "measure_id": "M06",
+      "stage": "imposed",
+      "description": "Reported unofficial import restrictions on Australian beef, wine, cotton, barley, lobster, timber and coal",
+      "formal_status": "informal_reported",
+      "mechanism_as_described": "unofficial import restrictions",
+      "goods_sectors_or_entities": [
+        "beef",
+        "wine",
+        "cotton",
+        "barley",
+        "lobster",
+        "timber",
+        "coal"
+      ],
+      "imposing_actor_ids": [
+        "A06"
+      ],
+      "rate_or_scope": {
+        "as_stated": null,
+        "rate_percent": null
+      },
+      "announced_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "effective_date": {
+        "value": {
+          "iso": "2020-11-06",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "reported_hedged",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶3",
+            "excerpt": "reportedly imposed unofficial import restrictions on Australian beef,"
+          }
+        ],
+        "note": "Cited article is dated 2020-11-02, before this start date (see C02)."
+      },
+      "end_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "related_measure_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07"
+      ],
+      "status": "reported_hedged",
+      "note": "Overlaps in goods with M02, M03, M05 and M07; the narrative does not say whether these are the same or additional measures.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "reportedly imposed unofficial import restrictions on Australian beef,"
+        }
+      ]
+    },
+    {
+      "measure_id": "M07",
+      "stage": "imposed",
+      "description": "Anti-dumping tariffs of 200 percent on Australian wine",
+      "formal_status": "unclear",
+      "mechanism_as_described": "anti-dumping tariffs",
+      "goods_sectors_or_entities": [
+        "wine"
+      ],
+      "imposing_actor_ids": [
+        "A01"
+      ],
+      "rate_or_scope": {
+        "as_stated": "200 percent anti-dumping tariffs",
+        "rate_percent": 200
+      },
+      "announced_date": {
+        "value": {
+          "iso": null,
+          "precision": "unknown",
+          "as_stated": null
+        },
+        "status": "not_reported",
+        "evidence": [],
+        "note": null
+      },
+      "effective_date": {
+        "value": {
+          "iso": "2020-11-28",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶3",
+            "excerpt": "on 2020/11/28, China imposed 200 percent anti-dumping tariffs on Australian wine"
+          }
+        ],
+        "note": "Cited headline says 'up to 200 per cent' and citation date conflicts with URL (see C01)."
+      },
+      "end_date": {
+        "value": {
+          "iso": "2024-03-29",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶5",
+            "excerpt": "China ended the tariffs on wine imports on 2024/03/29"
+          }
+        ],
+        "note": null
+      },
+      "related_measure_ids": [
+        "M04"
+      ],
+      "status": "stated",
+      "note": "Narrative does not say whether the tariffs were formally gazetted.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "on 2020/11/28, China imposed 200 percent anti-dumping tariffs on Australian wine"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "E01",
+      "phase": "threat",
+      "event_type": "threat",
+      "date": {
+        "iso": "2020-04-28",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "China threatened Australia with economic sanctions over its calls for an inquiry into the origins of COVID-19",
+      "actor_ids": [
+        "A01",
+        "A02"
+      ],
+      "measure_ids": [
+        "M01"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "On 2020/04/28, China threatened Australia with economic sanctions"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E02",
+      "phase": "threat",
+      "event_type": "statement",
+      "date": {
+        "iso": "2020-04-28",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "Ambassador Cheng said Chinese people would not want to buy Australian wine and beef if Australia kept pushing for the inquiry",
+      "actor_ids": [
+        "A03"
+      ],
+      "measure_ids": [
+        "M01"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": "Statement date inferred from narrative sequence.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "would not want to “drink Australian wine, eat Australian beef.”"
+        }
+      ],
+      "date_status": "inferred_from_source"
+    },
+    {
+      "event_id": "E03",
+      "phase": "imposition",
+      "event_type": "measure_imposed",
+      "date": {
+        "iso": "2020-05-12",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "China banned imports from Australia’s four largest beef exporters",
+      "actor_ids": [
+        "A01",
+        "A08"
+      ],
+      "measure_ids": [
+        "M02"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "China banned imports from Australia’s four largest beef exporters on 2020/05/12"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E04",
+      "phase": "escalation",
+      "event_type": "measure_imposed",
+      "date": {
+        "iso": null,
+        "precision": "relative",
+        "as_stated": "a few days later"
+      },
+      "description": "China placed an 80 percent tariff on Australian barley",
+      "actor_ids": [
+        "A01"
+      ],
+      "measure_ids": [
+        "M03"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": "Relative to E03.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "placed an 80 percent tariff on Australian barley a few days later."
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E05",
+      "phase": "escalation",
+      "event_type": "measure_imposed",
+      "date": {
+        "iso": "2020-08-17",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "China launched an anti-dumping investigation into wine imports from Australia",
+      "actor_ids": [
+        "A01"
+      ],
+      "measure_ids": [
+        "M04"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "launched an anti-dumping investigation into wine imports from Australia"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E06",
+      "phase": "escalation",
+      "event_type": "measure_imposed",
+      "date": {
+        "iso": "2020-10-09",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "Customs reportedly directed state-owned utilities and steel mills to stop importing Australian coal",
+      "actor_ids": [
+        "A04",
+        "A05"
+      ],
+      "measure_ids": [
+        "M05"
+      ],
+      "proceeding_ids": [],
+      "status": "reported_hedged",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "directed state-owned utilities and steel mills to cease importing Australian coal"
+        }
+      ],
+      "date_status": "reported_hedged"
+    },
+    {
+      "event_id": "E07",
+      "phase": "escalation",
+      "event_type": "measure_imposed",
+      "date": {
+        "iso": "2020-11-06",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "Ministry of Commerce reportedly imposed unofficial import restrictions on seven Australian goods",
+      "actor_ids": [
+        "A06"
+      ],
+      "measure_ids": [
+        "M06"
+      ],
+      "proceeding_ids": [],
+      "status": "reported_hedged",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "reportedly imposed unofficial import restrictions on Australian beef,"
+        }
+      ],
+      "date_status": "reported_hedged"
+    },
+    {
+      "event_id": "E08",
+      "phase": "escalation",
+      "event_type": "measure_imposed",
+      "date": {
+        "iso": "2020-11-28",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "China imposed 200 percent anti-dumping tariffs on Australian wine",
+      "actor_ids": [
+        "A01"
+      ],
+      "measure_ids": [
+        "M07"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "on 2020/11/28, China imposed 200 percent anti-dumping tariffs on Australian wine"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E09",
+      "phase": "target_response",
+      "event_type": "legal_proceeding",
+      "date": {
+        "iso": "2020-12-16",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "Australia requested WTO consultations with China on tariffs on barley",
+      "actor_ids": [
+        "A02",
+        "A07"
+      ],
+      "measure_ids": [
+        "M03"
+      ],
+      "proceeding_ids": [
+        "P01"
+      ],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶4",
+          "excerpt": "Australia requested consultations with China via the WTO regarding tariffs on barley"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E10",
+      "phase": "target_response",
+      "event_type": "legal_proceeding",
+      "date": {
+        "iso": "2021-06-22",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "Australia requested WTO consultations on China’s restrictions on wine imports",
+      "actor_ids": [
+        "A02",
+        "A07"
+      ],
+      "measure_ids": [
+        "M07"
+      ],
+      "proceeding_ids": [
+        "P02"
+      ],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶4",
+          "excerpt": "Australia requested consultations regarding China’s restrictions on wine imports."
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E11",
+      "phase": "negotiation",
+      "event_type": "meeting",
+      "date": {
+        "iso": "2023-02",
+        "precision": "month",
+        "as_stated": null
+      },
+      "description": "The two countries’ trade ministers held their first meeting since 2019",
+      "actor_ids": [
+        "A01",
+        "A02"
+      ],
+      "measure_ids": [],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "the two countries’ trade ministers had their first meeting since 2019"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E12",
+      "phase": "de_escalation",
+      "event_type": "measure_lifted",
+      "date": {
+        "iso": "2023-03-15",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "China lifted all restrictions on coal imports",
+      "actor_ids": [
+        "A01"
+      ],
+      "measure_ids": [
+        "M05"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "China lifted all restrictions on coal imports on 2023/03/15."
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E13",
+      "phase": "de_escalation",
+      "event_type": "legal_proceeding",
+      "date": {
+        "iso": "2023-08-11",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "Australia agreed to drop its WTO complaint relating to barley",
+      "actor_ids": [
+        "A02",
+        "A07"
+      ],
+      "measure_ids": [
+        "M03"
+      ],
+      "proceeding_ids": [
+        "P01"
+      ],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "Australia also agreed to drop its WTO complaint relating to barley on 2023/08/11"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E14",
+      "phase": "de_escalation",
+      "event_type": "legal_proceeding",
+      "date": {
+        "iso": "2024-03-29",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "Australia dropped its WTO complaint relating to wine",
+      "actor_ids": [
+        "A02",
+        "A07"
+      ],
+      "measure_ids": [
+        "M07"
+      ],
+      "proceeding_ids": [
+        "P02"
+      ],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "agreed to drop its WTO complaint relating to barley on 2023/08/11, and wine on 2024/03/29"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E15",
+      "phase": "de_escalation",
+      "event_type": "measure_lifted",
+      "date": {
+        "iso": "2024-03-29",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "China ended the tariffs on wine imports",
+      "actor_ids": [
+        "A01"
+      ],
+      "measure_ids": [
+        "M07"
+      ],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": null,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "China ended the tariffs on wine imports on 2024/03/29"
+        }
+      ],
+      "date_status": "stated"
+    },
+    {
+      "event_id": "E16",
+      "phase": "termination",
+      "event_type": "measure_lifted",
+      "date": {
+        "iso": "2024-12-04",
+        "precision": "day",
+        "as_stated": null
+      },
+      "description": "China dropped all remaining import restrictions stemming from the dispute",
+      "actor_ids": [
+        "A01"
+      ],
+      "measure_ids": [],
+      "proceeding_ids": [],
+      "status": "stated",
+      "note": "Cited article is dated 2024-12-03 (see C07).",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "dropped all remaining import restrictions stemming from the dispute on 2024/12/04"
+        }
+      ],
+      "date_status": "stated"
+    }
+  ],
+  "statements": [
+    {
+      "statement_id": "T01",
+      "speaker_actor_id": "A03",
+      "speaker_as_stated": "China’s ambassador to Australia, Jingye Cheng",
+      "date": {
+        "iso": "2020-04-28",
+        "precision": "day",
+        "as_stated": null
+      },
+      "statement_type": "threat",
+      "content": "Should Australia keep pushing for the inquiry, Chinese people would not want to “drink Australian wine, eat Australian beef.”",
+      "content_is_verbatim": false,
+      "addressed_to": "Australia",
+      "attribution": "paraphrase_in_source",
+      "note": "Only the quoted fragment is verbatim. Date inferred from narrative sequence.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "would not want to “drink Australian wine, eat Australian beef.”"
+        }
+      ]
+    }
+  ],
+  "aims_and_motives": [
+    {
+      "id": "G01",
+      "claim": "The trade restrictions were widely seen as a reaction to Australia’s calls for a global inquiry into the origins of COVID-19",
+      "claim_type": "unnamed_observers_assessment",
+      "attributed_to_actor_id": null,
+      "attributed_to_text": "unnamed observers, per the cited Economist article",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Summary",
+          "excerpt": "widely seen as a reaction to Australia’s calls for a global inquiry"
+        }
+      ]
+    },
+    {
+      "id": "G02",
+      "claim": "China threatened sanctions in response to Australia’s calls for an inquiry",
+      "claim_type": "source_assessment_of_motive",
+      "attributed_to_actor_id": null,
+      "attributed_to_text": "narrative author, citing the Guardian",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "in response to the country’s calls for an inquiry into the origins of COVID-19"
+        }
+      ]
+    }
+  ],
+  "proceedings": [
+    {
+      "proceeding_id": "P01",
+      "forum": "WTO",
+      "reference_number": "DS598",
+      "initiating_actor_id": "A02",
+      "subject_measure_ids": [
+        "M03"
+      ],
+      "steps": [
+        {
+          "date": {
+            "iso": "2020-12-16",
+            "precision": "day",
+            "as_stated": null
+          },
+          "step_type": "consultations_requested",
+          "description": "Australia requested consultations on tariffs on barley",
+          "evidence": [
+            {
+              "source_id": "S01",
+              "locator": "Narrative ¶4",
+              "excerpt": "Australia requested consultations with China via the WTO regarding tariffs on barley"
+            }
+          ],
+          "date_status": "stated"
+        },
+        {
+          "date": {
+            "iso": "2023-08-11",
+            "precision": "day",
+            "as_stated": null
+          },
+          "step_type": "complaint_withdrawn_or_suspended",
+          "description": "Australia agreed to drop its barley complaint",
+          "evidence": [
+            {
+              "source_id": "S01",
+              "locator": "Narrative ¶5",
+              "excerpt": "Australia also agreed to drop its WTO complaint relating to barley on 2023/08/11"
+            }
+          ],
+          "date_status": "stated"
+        }
+      ]
+    },
+    {
+      "proceeding_id": "P02",
+      "forum": "WTO",
+      "reference_number": "DS602",
+      "initiating_actor_id": "A02",
+      "subject_measure_ids": [
+        "M04",
+        "M07"
+      ],
+      "steps": [
+        {
+          "date": {
+            "iso": "2021-06-22",
+            "precision": "day",
+            "as_stated": null
+          },
+          "step_type": "consultations_requested",
+          "description": "Australia requested consultations on China’s restrictions on wine imports",
+          "evidence": [
+            {
+              "source_id": "S01",
+              "locator": "Narrative ¶4",
+              "excerpt": "Australia requested consultations regarding China’s restrictions on wine imports."
+            }
+          ],
+          "date_status": "stated"
+        },
+        {
+          "date": {
+            "iso": "2024-03-29",
+            "precision": "day",
+            "as_stated": null
+          },
+          "step_type": "complaint_withdrawn_or_suspended",
+          "description": "Australia dropped its wine complaint",
+          "evidence": [
+            {
+              "source_id": "S01",
+              "locator": "Narrative ¶5",
+              "excerpt": "agreed to drop its WTO complaint relating to barley on 2023/08/11, and wine on 2024/03/29"
+            }
+          ],
+          "date_status": "stated"
+        }
+      ]
+    }
+  ],
+  "reported_effects": [
+    {
+      "effect_id": "F01",
+      "affected_party_text": "Australian coal exporters",
+      "affected_actor_ids": [
+        "A02"
+      ],
+      "effect_category": "trade_value",
+      "description": "Value of Australian coal exports to China before the pandemic, as the baseline for the cost of the coal restrictions",
+      "quantity": {
+        "as_stated": "$39 billion USD worth of coal to China annually",
+        "value": 39,
+        "unit": "billion",
+        "currency": "USD",
+        "period_or_basis": "annual, before the pandemic"
+      },
+      "status": "stated",
+      "note": "Baseline figure, not a measured loss.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶4",
+          "excerpt": "Australia exported $39 billion USD worth of coal to China annually"
+        }
+      ]
+    },
+    {
+      "effect_id": "F02",
+      "affected_party_text": "Australian exporters of other restricted goods",
+      "affected_actor_ids": [
+        "A02"
+      ],
+      "effect_category": "trade_value",
+      "description": "Value of Australian goods affected by the other restrictions",
+      "quantity": {
+        "as_stated": "$20 billion USD worth of Australian goods",
+        "value": 20,
+        "unit": "billion",
+        "currency": "USD",
+        "period_or_basis": null
+      },
+      "status": "stated",
+      "note": "No time basis given in the narrative.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶4",
+          "excerpt": "The other restrictions impacted $20 billion USD worth of Australian goods."
+        }
+      ]
+    }
+  ],
+  "resolution": {
+    "how_ended": {
+      "value": "Restrictions were lifted in stages after bilateral relations improved: coal on 2023/03/15, wine tariffs on 2024/03/29, all remaining restrictions on 2024/12/04",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "The episode was resolved after relations improved beginning in 2023/02"
+        }
+      ],
+      "note": null
+    },
+    "sender_actions": [
+      {
+        "description": "China lifted all restrictions on coal imports",
+        "date": {
+          "iso": "2023-03-15",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶5",
+            "excerpt": "China lifted all restrictions on coal imports on 2023/03/15."
+          }
+        ]
+      },
+      {
+        "description": "China ended the tariffs on wine imports",
+        "date": {
+          "iso": "2024-03-29",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶5",
+            "excerpt": "China ended the tariffs on wine imports on 2024/03/29"
+          }
+        ]
+      },
+      {
+        "description": "China dropped all remaining import restrictions stemming from the dispute",
+        "date": {
+          "iso": "2024-12-04",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶5",
+            "excerpt": "dropped all remaining import restrictions stemming from the dispute on 2024/12/04"
+          }
+        ]
+      }
+    ],
+    "target_actions": [
+      {
+        "description": "Australia agreed to drop its WTO barley complaint",
+        "date": {
+          "iso": "2023-08-11",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶5",
+            "excerpt": "Australia also agreed to drop its WTO complaint relating to barley on 2023/08/11"
+          }
+        ]
+      },
+      {
+        "description": "Australia dropped its WTO wine complaint",
+        "date": {
+          "iso": "2024-03-29",
+          "precision": "day",
+          "as_stated": null
+        },
+        "status": "stated",
+        "evidence": [
+          {
+            "source_id": "S01",
+            "locator": "Narrative ¶5",
+            "excerpt": "agreed to drop its WTO complaint relating to barley on 2023/08/11, and wine on 2024/03/29"
+          }
+        ]
+      }
+    ],
+    "reported_agreement_or_exchange": {
+      "value": "Australia dropped its WTO complaints in anticipation of a mutually agreed solution; the terms of any agreement are not described",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "in anticipation of a mutually agreed upon solution"
+        }
+      ],
+      "note": null
+    },
+    "unresolved_issues": [],
+    "post_episode_developments": []
+  },
+  "background_context": [
+    {
+      "topic": "Australia’s call for an inquiry",
+      "description": "Australia had called for a global inquiry into the origins of COVID-19 before the threat; the narrative gives no date for the call",
+      "period": "before 2020-04-28",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶1",
+          "excerpt": "in response to the country’s calls for an inquiry into the origins of COVID-19"
+        }
+      ]
+    },
+    {
+      "topic": "Prior trade-minister contact",
+      "description": "The 2023 ministerial meeting was the first since 2019",
+      "period": "2019 to 2023",
+      "status": "stated",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "the two countries’ trade ministers had their first meeting since 2019"
+        }
+      ]
+    }
+  ],
+  "additional_facts": [],
+  "conflicts_and_gaps": [
+    {
+      "item_id": "C01",
+      "kind": "citation_inconsistency",
+      "location": "E08.date",
+      "description": "Footnote 10 is dated August 26th, 2020 but its URL path reads 2020-11-27; the narrative dates the tariff 2020/11/28. The cited headline says 'up to 200 per cent', the narrative says '200 percent'.",
+      "competing_values": [
+        {
+          "value": "2020-08-26 (citation date)",
+          "source_id": "S09"
+        },
+        {
+          "value": "2020-11-27 (URL path)",
+          "source_id": "S09"
+        },
+        {
+          "value": "2020-11-28 (narrative)",
+          "source_id": "S01"
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Footnote 10",
+          "excerpt": "China puts tariffs of up to 200 per cent on Australian wine"
+        }
+      ]
+    },
+    {
+      "item_id": "C02",
+      "kind": "citation_inconsistency",
+      "location": "E07.date",
+      "description": "Footnote 12 is dated November 2nd, 2020 (URL path 2020-11-03), earlier than the narrative's 2020/11/06 start date for the restrictions it supports.",
+      "competing_values": [
+        {
+          "value": "2020-11-02 (citation date)",
+          "source_id": "S11"
+        },
+        {
+          "value": "2020-11-06 (narrative)",
+          "source_id": "S01"
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Footnote 12",
+          "excerpt": "Fears more trade bans to come as China halts imports of Australian timber"
+        }
+      ]
+    },
+    {
+      "item_id": "C03",
+      "kind": "internal_inconsistency",
+      "location": "episode.sanction_imposition_start_date",
+      "description": "The summary places imposition of tariffs and restrictions on wine, cotton, barley, lobster, timber and coal on 2020/05/12; the narrative gives 2020/05/12 for the beef ban only and later dates for the other goods.",
+      "competing_values": [
+        {
+          "value": "2020-05-12 for all listed goods (summary)",
+          "source_id": "S01"
+        },
+        {
+          "value": "2020-05-12 beef only (narrative)",
+          "source_id": "S01"
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Summary",
+          "excerpt": "On 2020/05/12, China began to impose tariffs and trade restrictions on various"
+        }
+      ]
+    },
+    {
+      "item_id": "C04",
+      "kind": "relative_or_vague_date",
+      "location": "M03.effective_date",
+      "description": "The barley tariff is dated only as 'a few days later' than 2020/05/12; no exact date is given.",
+      "competing_values": [],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶2",
+          "excerpt": "placed an 80 percent tariff on Australian barley a few days later."
+        }
+      ]
+    },
+    {
+      "item_id": "C05",
+      "kind": "hedged_claim",
+      "location": "M05",
+      "description": "The coal directive and the November 2020 unofficial restrictions are both reported with 'reportedly'; neither is stated as confirmed.",
+      "competing_values": [],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶3",
+          "excerpt": "China’s General Administration of Customs reportedly directed"
+        }
+      ]
+    },
+    {
+      "item_id": "C06",
+      "kind": "citation_inconsistency",
+      "location": "E05.date",
+      "description": "Footnote 9 is dated August 17th, 2020 but its URL path reads 2020-08-18; the narrative gives 2020/08/17.",
+      "competing_values": [
+        {
+          "value": "2020-08-17 (citation date, narrative)",
+          "source_id": "S08"
+        },
+        {
+          "value": "2020-08-18 (URL path)",
+          "source_id": "S08"
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Footnote 9",
+          "excerpt": "China launches anti-dumping investigation into Australian wine exports"
+        }
+      ]
+    },
+    {
+      "item_id": "C07",
+      "kind": "citation_inconsistency",
+      "location": "E16.date",
+      "description": "Footnote 23 is dated December 3rd, 2024; the narrative gives 2024/12/04 for the lifting of the last restrictions.",
+      "competing_values": [
+        {
+          "value": "2024-12-03 (citation date)",
+          "source_id": "S05"
+        },
+        {
+          "value": "2024-12-04 (narrative)",
+          "source_id": "S01"
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Footnote 23",
+          "excerpt": "China drops last trade bans imposed on Australia’s exports"
+        }
+      ]
+    },
+    {
+      "item_id": "C08",
+      "kind": "not_reported",
+      "location": "G01",
+      "description": "No official Chinese statement linking the imposed measures to the inquiry is reported; only the ambassador’s remark (T01) and observers’ assessments (G01, G02).",
+      "competing_values": [],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Summary",
+          "excerpt": "widely seen as a reaction to Australia’s calls for a global inquiry"
+        }
+      ]
+    },
+    {
+      "item_id": "C09",
+      "kind": "not_reported",
+      "location": "M02",
+      "description": "No individual end dates are given for the beef ban (M02) or the barley tariff (M03); they may fall under the 2024/12/04 removal of all remaining restrictions.",
+      "competing_values": [],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶5",
+          "excerpt": "dropped all remaining import restrictions stemming from the dispute on 2024/12/04"
+        }
+      ]
+    },
+    {
+      "item_id": "C10",
+      "kind": "not_reported",
+      "location": "episode.unsc_involved",
+      "description": "UNSC involvement and the institution flag are left blank: no supplied source mentions the UNSC or a sender-proposed institutional motion. The WTO steps were requested by the target.",
+      "competing_values": [],
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Narrative ¶4",
+          "excerpt": "Australia requested consultations with China via the WTO regarding tariffs on barley"
+        }
+      ]
+    }
+  ]
+}
